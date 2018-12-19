@@ -119,7 +119,7 @@ namespace iLanguage
 
         void check()
         {
-            questions
+            
         }
         public void StartGame()
         {
