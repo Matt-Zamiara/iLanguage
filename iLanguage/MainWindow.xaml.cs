@@ -22,16 +22,18 @@ namespace iLanguage
     /// </summary>
     public partial class MainWindow : Window
     {
+        InterfaceSetter game;
         RadioButton[] answerButtons;
         public MainWindow()
         {
+            
             InitializeComponent(); //tutaj skonczylismy nie wczytuje pytan
             answerButtons = new RadioButton[4];
             answerButtons[0] = odp1;
             answerButtons[1] = odp2;
             answerButtons[2] = odp3;
             answerButtons[3] = odp4;
-            InterfaceSetter game = new InterfaceSetter(answerButtons);
+            game = new InterfaceSetter(answerButtons,Pytanie);
             game.StartGame();
 
 
@@ -42,30 +44,30 @@ namespace iLanguage
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton button = (RadioButton)sender;
-            MessageBox.Show(button.Content.ToString());
+            
         }
 
         private void odp3_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton button = (RadioButton)sender;
-            MessageBox.Show(button.Content.ToString());
+            
         }
 
         private void odp2_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton button = (RadioButton)sender;
-            MessageBox.Show(button.Content.ToString());
+            
         }
 
         private void odp4_Checked(object sender, RoutedEventArgs e)
         {
             RadioButton button = (RadioButton)sender;
-            MessageBox.Show(button.Content.ToString());
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+         
         }
     }
 
@@ -76,6 +78,8 @@ namespace iLanguage
         public string Text { get; }
 
         public string[] Answers { get; }
+
+        
 
         public Question(string text, string[] answers, int correctAnswer)
         {
@@ -99,18 +103,24 @@ namespace iLanguage
 
     class InterfaceSetter
     {
+        Label _label;
         RadioButton[] _answerButtons;
         DataBases dataBases;
         Question[] questions;
         int questionNumber;
 
-        public InterfaceSetter(RadioButton[] answerButtons)
+        public InterfaceSetter(RadioButton[] answerButtons,Label label)
         {
             _answerButtons = answerButtons;
             dataBases = new DataBases();
             questionNumber = 3;
+            _label = label;
         }
 
+        void check()
+        {
+            questions
+        }
         public void StartGame()
         {
             questions = dataBases.PullQuestions(questionNumber);
@@ -119,9 +129,13 @@ namespace iLanguage
                 for(int j = 0; j < _answerButtons.Length; j++)
                 {
                     _answerButtons[j].Content = questions[i].Answers[j];
+                    _label.Content = questions[i].Text;
+                    
                 }
             }
+           
         }
+
     }
     class DataBases
     {
@@ -142,9 +156,10 @@ namespace iLanguage
                 data[i] = questions[index];
                 questions.RemoveAt(index);
             }
+
             return data;
         }
     }
 }
-//zeby nuie losowalo 2 razy tego samego
-//w label nie wyswietla pytania
+//sprawdzenie pytania
+//

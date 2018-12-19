@@ -10,7 +10,7 @@
         <RadioButton x:Name="odp1" Content="Karczochy" HorizontalAlignment="Left" Margin="123,127,0,0" VerticalAlignment="Top" FontSize="20" Height="29" Checked="RadioButton_Checked"/>
         <RadioButton x:Name="odp2" Content="Kuskus" HorizontalAlignment="Left" Margin="528,127,0,0" VerticalAlignment="Top" FontSize="20" Checked="odp2_Checked"/>
         <RadioButton x:Name="odp3" Content="Papryka" HorizontalAlignment="Left" Margin="123,200,0,0" VerticalAlignment="Top" FontSize="20" Checked="odp3_Checked"/>
-        <Label x:Name="Pytanie" Content="dfgdhg" HorizontalAlignment="Left" Margin="123,64,0,0" VerticalAlignment="Top" Width="539"/>
+        <Label x:Name="Pytanie" Content="dfgdhg" HorizontalAlignment="Left" Margin="123,58,0,0" VerticalAlignment="Top" Width="539"/>
         <Button Content="Sprawdź" HorizontalAlignment="Left" Margin="279,291,0,0" VerticalAlignment="Top" Width="205" Click="Button_Click"/>
         <RadioButton x:Name="odp4" Content="EEEEEE" HorizontalAlignment="Left" Margin="528,205,0,0" VerticalAlignment="Top" FontSize="20" Checked="odp4_Checked"/>
 
